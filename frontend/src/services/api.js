@@ -1,0 +1,18 @@
+const API_URL = "http://localhost:8080";
+
+export const apiFetch = async (path, options = {}) => {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`${API_URL}${path}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(token && { Authorization: `Bearer ${token}` }),
+      ...options.headers,
+    },
+  });
+
+  return response;
+};
+
+export { API_URL };
