@@ -2,7 +2,6 @@
 .env
 .env.local
 .env.*.local
-application.properties
 application-prod.properties
 application-local.properties
 
