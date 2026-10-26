@@ -15,7 +15,8 @@ function Login({ onLogin }) {
     setError("");
     setLoading(true);
 
-    const url = isRegister ? "http://localhost:8080/auth/register" : "http://localhost:8080/auth/login";
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+    const url = isRegister ? `${API_URL}/auth/register` : `${API_URL}/auth/login`;
 
     try {
       const res = await fetch(url, {
