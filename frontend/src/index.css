@@ -1,12 +1,13 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  touch-action: manipulation; 
 }
 
 html, body, #root {
-  height: 100vh;
+  height: 100dvh; 
   width: 100%;
   overflow: hidden;
 }
@@ -17,13 +18,12 @@ body {
   color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  touch-action: pan-y; 
 }
 
-button {
+button, input {
   font-family: inherit;
   outline: none;
-}
-
-input {
-  font-family: inherit;
+  font-size: 16px;
 }

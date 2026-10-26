@@ -91,7 +91,14 @@ function App() {
   }
 
   return (
-    <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
+    <div style={{
+      display: "flex",
+      width: "100%",
+      height: "100dvh",
+      paddingTop: "env(safe-area-inset-top)",
+      overflow: "hidden",
+      backgroundColor: "#ffffff"
+      }}>
       {/* На мобильном скрываем контакты, если чат открыт */}
       {(!isMobile || !selectedUser) && (
         <div style={{ 
