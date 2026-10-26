@@ -9,6 +9,8 @@ function Chat({
   onContactUpdate,
   wsClient,
   username,
+  onBack,
+  isMobile
 }) {
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
@@ -283,6 +285,8 @@ function Chat({
         searchQuery={searchQuery}
         onSearch={handleSearch}
         onDeleteDialog={handleDeleteDialog}
+        onBack={onBack} 
+        isMobile={isMobile}   
       />
 
       <MessageList

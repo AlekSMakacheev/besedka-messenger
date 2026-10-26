@@ -12,6 +12,15 @@ export const apiFetch = async (path, options = {}) => {
     },
   });
 
+  if (response.status === 401) {
+    console.warn("Токен истек или неверный. Разлогиниваем...");
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("selectedContact");
+    window.location.reload(); 
+    throw new Error("Unauthorized");
+  }
+
   return response;
 };
 

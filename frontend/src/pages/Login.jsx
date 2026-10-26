@@ -61,9 +61,9 @@ function Login({ onLogin }) {
         background: colors.backgroundChat
       }}
     >
-      <form onSubmit={handleSubmit} style={{ background: colors.background, padding: spacing.xl, borderRadius: radius.large, boxShadow: "0 10px 25px rgba(0,0,0,0.05)", width: "340px", border: `1px solid ${colors.border}` }}>
+      <form onSubmit={handleSubmit} style={{ background: colors.background, padding: spacing.xl, borderRadius: radius.large, boxShadow: "0 10px 25px rgba(0,0,0,0.05)", width: "100%", maxWidth: "340px", border: `1px solid ${colors.border}` }}>
         
-        <div style={{ textAlign: "center", marginBottom: spacing.xl }}>
+        <div style={{ padding: "16px", textAlign: "center", marginBottom: spacing.xl }}>
           <div style={{ width: "60px", height: "60px", background: colors.primaryLight, color: colors.primary, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 10px" }}>
             <LogIn size={30} />
           </div>
