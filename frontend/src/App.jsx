@@ -9,15 +9,21 @@ function App() {
   const [refreshContacts, setRefreshContacts] = useState(0);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [stompClient, setStompClient] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(() => 
+    window.matchMedia("(max-width: 768px)").matches
+  );
 
   const refreshTimeout = useRef(null);
 
-  // Следим за размером экрана
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    
+    const handleChange = (e) => {
+      setIsMobile(e.matches);
+    };
+    
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const triggerRefresh = useCallback(() => {
